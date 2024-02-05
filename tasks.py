@@ -91,4 +91,4 @@ def embed_screenshot_to_receipt(screenshot: str, pdf_file: str):
 
 def archive_receipts():
     archive = Archive()
-    archive.archive_folder_with_zip(folder="output/receipts/", archive_name="receipts.zip")
+    archive.archive_folder_with_zip(folder="output/receipts/", archive_name="output/receipts.zip")
