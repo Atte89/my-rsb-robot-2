@@ -56,9 +56,12 @@ def fill_the_form(row: dict):
     page.wait_for_load_state(state="networkidle")
 
     while page.is_visible(selector="#order"):
-        page.mouse.wheel(delta_y=100, delta_x=0)
-        page.click(selector="#order", timeout=20, force=True)
-        page.wait_for_load_state(state="networkidle")
+        try:
+            page.mouse.wheel(delta_y=100, delta_x=0)
+            page.click(selector="#order", timeout=20, force=True)
+            page.wait_for_load_state(state="networkidle")
+        except Exception:
+            break
 
     pdf_path = receipt_to_pdf(order_number=row["Order number"])
     jpeg_path = screenshot_robot(order_number=row["Order number"])
