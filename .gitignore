@@ -17,3 +17,4 @@ testrun/*
 *.pkl
 *.pdf
 *.jpeg
+*.csv
